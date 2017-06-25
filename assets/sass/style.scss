@@ -228,6 +228,10 @@ $black: #000;
       font-weight: 600;
       letter-spacing: 0.2px;
       transition: color 0.3s ease;
+      &.menu-link--about{
+        padding-bottom: 8px;
+        border-bottom: 2px solid;
+      }
       &:hover{
         color: #777777;
       }
@@ -239,6 +243,7 @@ $black: #000;
   #sectionTopBanner{
     .section-desc{
       max-width: 42vw;
+      margin: 16px auto 0;
     }
   }
   #sectionWinBanner{
@@ -325,13 +330,56 @@ $black: #000;
       }
     }
   }
-}
-#officeMap{
-  overflow: hidden;
-  iframe{
-    height: 400px !important;
+  #sectionAbout{
+    .about-us-content {
+      margin-top: 24px;
+      .section-desc {
+        min-width: 50%;
+        margin: 0;
+      }
+      .address-info{
+        margin-bottom: 32px;
+        .address, .directions{
+          margin: 16px 0;
+          font-size: 16px;
+          color: $accent-color;
+          line-height: 1.5;
+        }
+      }
+    }
+    #officeMap{
+      .overlay-maps{
+        background: transparent;
+        position: relative;
+        height: 400px;
+        width: 100%;
+        top: 400px;
+        margin-top: -400px;
+      }
+    }
   }
 }
+footer{
+  margin: 0 -64px;
+  background: #f4f4f4;
+  .social-links{
+    justify-content: center;
+    .social-link{
+      color: lighten(#111, 70);
+      transition: color 0.3s ease;
+      &[title="LinkedIn"]:hover{
+        color: #2386BB;
+      }
+      &[title="Facebook"]:hover{
+        color: #3B5B97;
+      }
+      &[title="Twitter"]:hover{
+        color: #28A3F1;
+      }
+    }
+  }
+}
+
 .section-title {
   font-size: 48px;
 }
@@ -339,4 +387,5 @@ $black: #000;
   font-size: 20px;
   font-weight: 300;
   line-height: 30px;
+  margin: 24px 0;
 }
