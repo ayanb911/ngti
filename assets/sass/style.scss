@@ -280,6 +280,24 @@ $black: #000;
       }
     }
   }
+  #sectionCustomer{
+    .showcase{
+      .showcase-item{
+        width: calc(100% / 3);
+        .showitem-img{
+          min-height: 256px;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          text-align: center;
+          background: #f4f4f4;
+          img{
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
 }
 #officeMap{
   overflow: hidden;
