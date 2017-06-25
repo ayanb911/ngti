@@ -18,7 +18,7 @@ gulp.task("browserSync", function () {
     })
 });
 
-//convert all scss files to css
+//convert all sass files to css
 gulp.task('build-css', function() {
     return gulp.src('assets/sass/*.scss')
         .pipe(sass())
