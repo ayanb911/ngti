@@ -64,13 +64,14 @@ gulp.task('minify-image', function () {
 })
 
 //gulp defaults
-gulp.task('default', ['build-css','uglify-js', 'uglify-css-reset', 'uglify-css-main', 'minify-image']);
+gulp.task('default', ['build-css']);
+
+// uglify stuff
+gulp.task("uglify", ['build-css','uglify-js', 'uglify-css-reset', 'uglify-css-main', 'minify-image']);
 
 
 //gulp watch
-gulp.task('watch', ['browserSync', 'build-css','uglify-js', 'uglify-css-reset', 'uglify-css-main', 'minify-image'], function() {
+gulp.task('watch', ['build-css'], function() {
     //Reload the browser when these files get saved
     gulp.watch('assets/sass/*.scss', ['build-css']);
-    gulp.watch('assets/js/*.js', browserSync.reload);
-    gulp.watch('*.html', browserSync.reload);
 });

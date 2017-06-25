@@ -1,0 +1,222 @@
+//Imports//
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900'); // import Playfair display font
+
+
+//Variables//
+$primary-color: #333; //primary color black
+$accent-color: #777; //accent color off-white
+$text-color: $accent-color; //text-color
+$white: #fff;
+$black: #000;
+
+//Mixins//
+
+//Function for returning exponent of a number
+@function exponent($val1, $val2, $expNumber){
+  $exp: 1;
+  @if $val2>0 {
+    @for $i from 1 through $val2 {
+      $exp: $exp * $expNumber;
+    }
+  }
+  @return ($val1*$exp)+px;
+}
+
+//Generate Margin Classes
+@mixin marginClasses{
+  $directions: ("r": right, "l": left, "b": bottom, "t": top); //array for building classes
+  $level: 5; //number of levels
+  @each $dir, $d in $directions{
+    @for $i from 1 through $level{
+      .layout-m-#{$dir}--#{$i}{
+        margin-#{$d}: exponent(4,$i,2);
+      }
+    }
+  }
+}
+//Generate Padding Classes
+@mixin paddingClasses{
+  $directions: ("r": right, "l": left, "b": bottom, "t": top);
+  $level: 5;
+  @each $dir, $d in $directions{
+    @for $i from 1 through $level{
+      .layout-p-#{$dir}--#{$i}{
+        padding-#{$d}: exponent(4,$i,2);
+      }
+    }
+  }
+}
+
+////Most Used Classes////
+
+//Display Classes
+.display-block{
+  display: block;
+}
+.display-flex{
+  display: flex;
+  &.display-flex--row{
+    flex-direction: row;
+    &.flex-dir-reverse{
+      flex-direction: row-reverse;
+    }
+  }
+  &.display-flex--column{
+    flex-direction: column;
+    &.flex-dir-reverse{
+      flex-direction: column-reverse;
+    }
+  }
+}
+.flex-grow{
+  &--1 {
+    flex-grow: 1;
+  }
+}
+
+//Position Classes
+.pos-rel{
+  position: relative;
+}
+.pos-absolute{
+  position: absolute;
+}
+.pos-fixed{
+  position: fixed;
+}
+.top-left-0{
+  top: 0;
+  left: 0;
+}
+.margin-center{
+  margin: 0 auto;
+}
+
+//Colour Classes
+.colour-primary{
+  color: $primary-color;
+}
+.colour-accent{
+  color: $accent-color;
+}
+.text-colour--default{
+  color: $text-color;
+}
+.is-white{
+  color: $white;
+}
+.is-black{
+  color: $black;
+}
+
+//Typography classes
+.text-upper{
+  text-transform: uppercase;
+}
+.text-center{
+  text-align: center;
+}
+
+//Sizing Classes
+.height--100{
+  height: 100%;
+  &-is-vh{
+    height: 100vh;
+  }
+}
+.width--100{
+  width: 100%;
+  &-is-vw{
+    width: 100vw;
+  }
+}
+
+//Layout Classes
+@include marginClasses;
+@include paddingClasses;
+
+//Visibility Classes
+.hidden{
+  display: none;
+  &--lt-xl{
+    @media screen and (max-width: 3839px){
+      display: none;
+    }
+  }
+  &--gt-xl{
+    @media screen and (min-width: 3839px){
+      display: none;
+    }
+  }
+  &--lt-lg{
+    @media screen and (max-width: 1919px){
+      display: none;
+    }
+  }
+  &--gt-lg{
+    @media screen and (min-width: 1919px){
+      display: none;
+    }
+  }
+  &--lt-md{
+    @media screen and (max-width: 1279px){
+      display: none;
+    }
+  }
+  &--gt-md{
+    @media screen and (min-width: 1279px){
+      display: none;
+    }
+  }
+  &--lt-sm{
+    @media screen and (max-width: 959px){
+      display: none;
+    }
+  }
+  &--gt-sm{
+    @media screen and (min-width: 959px){
+      display: none;
+    }
+  }
+  &--lt-xs{
+    @media screen and (max-width: 319px){
+      display: none;
+    }
+  }
+  &--gt-xs{
+    @media screen and (min-width: 319px){
+      display: none;
+    }
+  }
+}
+
+
+// Project Specific Classes
+#navbar{
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+  #siteLogo{
+    svg{
+      width: 4.4vw;
+    }
+  }
+  #menuList{
+    .menu-link{
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: color 0.3s ease;
+      &:hover{
+        color: #777777;
+      }
+    }
+  }
+
+}
+.section-title {
+  font-size: 48px;
+}
+.section-desc{
+  font-size: 20px;
+}
