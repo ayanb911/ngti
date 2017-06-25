@@ -214,9 +214,37 @@ $black: #000;
   }
 
 }
+#main{
+  #sectionTopBanner{
+    .section-desc{
+      max-width: 42vw;
+    }
+  }
+  #sectionWinBanner{
+    margin: 0 -64px;
+    background: #f4f4f4;
+    .win-image{
+      img{
+        width: 80%;
+      }
+    }
+    .win-desc{
+      max-width: 40%;
+      justify-content: center;
+    }
+  }
+}
+#officeMap{
+  overflow: hidden;
+  iframe{
+    height: 400px !important;
+  }
+}
 .section-title {
   font-size: 48px;
 }
 .section-desc{
   font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
 }
