@@ -192,200 +192,266 @@ $black: #000;
 
 
 // Project Specific Classes
-.showcase {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 100%;
-  .showcase-item {
-    width: 25%;
-    padding: 8px;
-    .showitem-img {
-      border-radius: 8px;
-      img{
-        padding: 16px;
-        width: 100%;
+.container{
+
+  .showcase {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    .showcase-item {
+      width: 25%;
+      padding: 8px;
+      .showitem-img {
+        border-radius: 8px;
+        img{
+          padding: 16px;
+          width: 100%;
+        }
       }
     }
-  }
-  .showitem-desc{
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 16px 0;
-  }
-}
-#navbar{
-  justify-content: space-between;
-  align-items: center;
-  padding: 32px 0;
-  #siteLogo{
-    svg{
-      width: 4.4vw;
+    .showitem-desc{
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 16px 0;
     }
   }
-  #menuList{
-    .menu-link{
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.2px;
-      transition: color 0.3s ease;
-      &.menu-link--about{
-        padding-bottom: 8px;
-        border-bottom: 2px solid;
-      }
-      &:hover{
-        color: #777777;
-      }
-    }
+  .section-title {
+    font-size: 48px;
+  }
+  .section-desc{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 24px 0;
   }
 
-}
-#main{
-  #sectionTopBanner{
-    .section-desc{
-      max-width: 42vw;
-      margin: 16px auto 0;
-    }
-  }
-  #sectionWinBanner{
-    margin: 0 -64px;
-    background: #f4f4f4;
-    .win-image{
-      img{
-        width: 80%;
-      }
-    }
-    .win-desc{
-      max-width: 40%;
-      justify-content: center;
-    }
-  }
-  #sectionWork{
-    .showcase{
-      .showcase-item{
-        &.work-io .showitem-img{
-          background: #941B80;
-        }
-        &.work-doppio .showitem-img{
-          background: #4373DF;
-        }
-        &.work-localgusto .showitem-img{
-          background: #F88B69;
-        }
-        &.work-mila .showitem-img{
-          background: #56AFEA;
-        }
-        .showitem-img{
-          img{
-            transition: transform 0.3s ease-in-out;
+  #profileOverlay{
+    top: 12%;
+    min-height: 60vh;
+    width: 100%;
+    .profile-wrapper {
+      width: 40vw;
+      background: $white;
+      padding: 16px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 4px;
+      section {
+        padding: 16px 0;
+        &#profileTop {
+          align-items: center;
+          .profile-image{
+            background: url('../images/profile_picture_SMALL.jpg') top no-repeat;
+            background-size: cover;
+            height: 100px;
+            width: 100px;
+            border-radius: 3rem;
           }
-          &:hover img, &:focus img{
-            transform: scale(1.1);
+        }
+        &#profileMiddle{
+          .section-desc {
+            margin: 0;
+            .tech-pics {
+              align-items: center;
+              img {
+                height: 40px;
+                margin: 0 4px;
+              }
+            }
+          }
+        }
+        &#profileBottom{
+          .profile-links{
+            text-align: right;
           }
         }
       }
-    }
-  }
-  #sectionCustomer{
-    .showcase{
-      .showcase-item{
-        width: calc(100% / 3);
-        .showitem-img{
-          min-height: 256px;
-          display: flex;
-          flex-flow: column;
-          justify-content: center;
-          text-align: center;
-          background: #f4f4f4;
-          img{
-            width: 50%;
-          }
-        }
+      &:after{
+        content: "X";
+        position: absolute;
+        top: 16px;
+        right: 24px;
+        color: $primary-color;
+        padding: 8px;
       }
     }
+    &:before{
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      opacity: 0.7;
+    }
   }
-  #sectionCareers{
-    .showcase{
-      .showcase-item{
-        width: calc(100% / 3 - 16px);
-        background: #f4f4f4;
-        margin: 8px;
-        padding: 32px;
-        border-radius: 8px;
-        transition: background 0.3s ease-in-out;
-        .job-post{
-          font-size: 24px;
-          margin-bottom: 16px;
-          color: #357edd;
-        }
-        .job-time{
-          color: #999;
-          margin-bottom: 8px;
-        }
-        .job-loc{
-          color: $accent-color;
+  #navbar{
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+    #siteLogo{
+      svg{
+        width: 4.4vw;
+      }
+    }
+    #menuList{
+      .menu-link{
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        transition: color 0.3s ease;
+        &.menu-link--about{
+          padding-bottom: 8px;
+          border-bottom: 2px solid;
         }
         &:hover{
-          background: rgba(0,0,0,0.1);
+          color: #777777;
         }
       }
     }
-  }
-  #sectionAbout{
-    .about-us-content {
-      margin-top: 24px;
-      .section-desc {
-        min-width: 50%;
-        margin: 0;
-      }
-      .address-info{
-        margin-bottom: 32px;
-        .address, .directions{
-          margin: 16px 0;
-          font-size: 16px;
-          color: $accent-color;
-          line-height: 1.5;
-        }
-      }
-    }
-    #officeMap{
-      .overlay-maps{
-        background: transparent;
-        position: relative;
-        height: 400px;
-        width: 100%;
-        top: 400px;
-        margin-top: -400px;
-      }
-    }
-  }
-}
-footer{
-  margin: 0 -64px;
-  background: #f4f4f4;
-  .social-links{
-    justify-content: center;
-    .social-link{
-      color: lighten(#111, 70);
-      transition: color 0.3s ease;
-      &[title="LinkedIn"]:hover{
-        color: #2386BB;
-      }
-      &[title="Facebook"]:hover{
-        color: #3B5B97;
-      }
-      &[title="Twitter"]:hover{
-        color: #28A3F1;
-      }
-    }
-  }
-}
 
-.section-title {
-  font-size: 48px;
-}
-.section-desc{
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 30px;
-  margin: 24px 0;
+  }
+  #main{
+    #sectionTopBanner{
+      .section-desc{
+        max-width: 42vw;
+        margin: 16px auto 0;
+      }
+    }
+    #sectionWinBanner{
+      margin: 0 -64px;
+      background: #f4f4f4;
+      .win-image{
+        img{
+          width: 80%;
+        }
+      }
+      .win-desc{
+        max-width: 40%;
+        justify-content: center;
+      }
+    }
+    #sectionWork{
+      .showcase{
+        .showcase-item{
+          &.work-io .showitem-img{
+            background: #941B80;
+          }
+          &.work-doppio .showitem-img{
+            background: #4373DF;
+          }
+          &.work-localgusto .showitem-img{
+            background: #F88B69;
+          }
+          &.work-mila .showitem-img{
+            background: #56AFEA;
+          }
+          .showitem-img{
+            img{
+              transition: transform 0.3s ease-in-out;
+            }
+            &:hover img, &:focus img{
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+    #sectionCustomer{
+      .showcase{
+        .showcase-item{
+          width: calc(100% / 3);
+          .showitem-img{
+            min-height: 256px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            text-align: center;
+            background: #f4f4f4;
+            img{
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+    #sectionCareers{
+      .showcase{
+        .showcase-item{
+          width: calc(100% / 3 - 16px);
+          background: #f4f4f4;
+          margin: 8px;
+          padding: 32px;
+          border-radius: 8px;
+          transition: background 0.3s ease-in-out;
+          .job-post{
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #357edd;
+          }
+          .job-time{
+            color: #999;
+            margin-bottom: 8px;
+          }
+          .job-loc{
+            color: $accent-color;
+          }
+          &:hover{
+            background: rgba(0,0,0,0.1);
+          }
+        }
+      }
+    }
+    #sectionAbout{
+      .about-us-content {
+        margin-top: 24px;
+        .section-desc {
+          min-width: 50%;
+          margin: 0;
+        }
+        .address-info{
+          margin-bottom: 32px;
+          .address, .directions{
+            margin: 16px 0;
+            font-size: 16px;
+            color: $accent-color;
+            line-height: 1.5;
+          }
+        }
+      }
+      #officeMap{
+        .overlay-maps{
+          background: transparent;
+          position: relative;
+          height: 400px;
+          width: 100%;
+          top: 400px;
+          margin-top: -400px;
+        }
+      }
+    }
+  }
+  footer{
+    margin: 0 -64px;
+    background: #f4f4f4;
+    .social-links{
+      justify-content: center;
+      .social-link{
+        color: lighten(#111, 70);
+        transition: color 0.3s ease;
+        &[title="LinkedIn"]:hover{
+          color: #2386BB;
+        }
+        &[title="Facebook"]:hover{
+          color: #3B5B97;
+        }
+        &[title="Twitter"]:hover{
+          color: #28A3F1;
+        }
+      }
+    }
+  }
 }

@@ -5,10 +5,55 @@
     <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
     <link href="assets/css/style.css" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body class="pos-rel">
 <div class="container layout-p-l--4 layout-p-r--4">
-    <div class="overlay-profile">
-        
+    <div id="profileOverlay" class=" pos-fixed top-left-0 ">
+        <div class="profile-wrapper overlay-profile">
+            <section id="profileTop" class="display-flex display-flex--row">
+                <div class="profile-image layout-m-r--2">
+
+                </div>
+                <div class="basic-info display-flex display-flex--column">
+                    <h3 class="profile-name layout-m-b--1 section-title">Ayan Banerjee</h3>
+                    <p class="job">Front End Developer</p>
+                    <p class="location">Kolkata, India</p>
+                </div>
+            </section>
+            <section id="profileMiddle">
+                <div class="profile-about section-desc">
+                    <p>
+                        Hi,<br>
+                        I wanted to apply for the position of Front End Developer at NGTI, and figured what better way to showcase my skills than building a mockup of the site. I also challenged myself to do it within a day, and having done it, I feel my coding skills under pressure have improved.<br><br>
+
+                        <span class="display-flex display-flex--row tech-pics">
+                            Built Using -
+                            <span>
+                                <img src="assets/images/HTML5_logo_and_wordmark.svg.png" alt="HTML">
+                            </span>
+                            <span>
+                                <img src="assets/images/logo-sass.svg" alt="SASS">
+                            </span>
+                            <span>
+                                <img src="assets/images/Badge_js-strict.svg.png" alt="Javascript">
+                            </span>
+                            <span>
+                                <img src="assets/images/jquery.gif" alt="jQuery">
+                            </span>
+                            <span>
+                                <img src="assets/images/git-logo.png" alt="GIT">
+                            </span>
+                        </span>
+                    </p>
+                </div>
+            </section>
+            <section id="profileBottom">
+                <div class="profile-links">
+                    <a href="#">Codepen</a>
+                    <a href="#">Github</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </section>
+        </div>
     </div>
     <header id="navbar" class="navbar display-flex display-flex--row layout-p-t--3 layout-p-b--3">
         <a href="https://ngti.nl/">
