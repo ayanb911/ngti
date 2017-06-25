@@ -1,13 +1,18 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <title>NGTI MOCKUP</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <meta name="developer" content="Developed by: Ayan Banerjee - ayan7414@gmail.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
     <link href="assets/css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body class="pos-rel">
 <div class="container layout-p-l--4 layout-p-r--4">
-    <div id="profileOverlay" class=" pos-fixed top-left-0 ">
+    <div class="overlay-black"></div>
+    <div id="profileOverlay" class=" pos-fixed top-left-0 overlay-hidden">
         <div class="profile-wrapper overlay-profile">
             <section id="profileTop" class="display-flex display-flex--row">
                 <div class="profile-image layout-m-r--2">
@@ -48,11 +53,13 @@
             </section>
             <section id="profileBottom">
                 <div class="profile-links">
-                    <a href="#">Codepen</a>
-                    <a href="#">Github</a>
-                    <a href="#">LinkedIn</a>
+                    <a href="https://codepen.io/SparkPlug911/">Codepen</a>
+                    <a href="https://github.com/ayanb911">Github</a>
+                    <a href="mailto:ayan7414@gmail.com">Gmail</a>
+                    <a href="https://www.linkedin.com/in/abanerjee911/">LinkedIn</a>
                 </div>
             </section>
+            <div class="overlay-close"><i class="material-icons">clear</i></div>
         </div>
     </div>
     <header id="navbar" class="navbar display-flex display-flex--row layout-p-t--3 layout-p-b--3">
@@ -255,6 +262,10 @@
         </div>
     </footer>
 </div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
 <script src="assets/js/scripts.js"></script>
 </body>
 </html>
