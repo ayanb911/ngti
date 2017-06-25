@@ -298,6 +298,33 @@ $black: #000;
       }
     }
   }
+  #sectionCareers{
+    .showcase{
+      .showcase-item{
+        width: calc(100% / 3 - 16px);
+        background: #f4f4f4;
+        margin: 8px;
+        padding: 32px;
+        border-radius: 8px;
+        transition: background 0.3s ease-in-out;
+        .job-post{
+          font-size: 24px;
+          margin-bottom: 16px;
+          color: #357edd;
+        }
+        .job-time{
+          color: #999;
+          margin-bottom: 8px;
+        }
+        .job-loc{
+          color: $accent-color;
+        }
+        &:hover{
+          background: rgba(0,0,0,0.1);
+        }
+      }
+    }
+  }
 }
 #officeMap{
   overflow: hidden;
