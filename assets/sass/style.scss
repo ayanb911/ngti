@@ -192,6 +192,27 @@ $black: #000;
 
 
 // Project Specific Classes
+.showcase {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%;
+  .showcase-item {
+    width: 25%;
+    padding: 8px;
+    .showitem-img {
+      border-radius: 8px;
+      img{
+        padding: 16px;
+        width: 100%;
+      }
+    }
+  }
+  .showitem-desc{
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 16px 0;
+  }
+}
 #navbar{
   justify-content: space-between;
   align-items: center;
@@ -231,6 +252,32 @@ $black: #000;
     .win-desc{
       max-width: 40%;
       justify-content: center;
+    }
+  }
+  #sectionWork{
+    .showcase{
+      .showcase-item{
+        &.work-io .showitem-img{
+          background: #941B80;
+        }
+        &.work-doppio .showitem-img{
+          background: #4373DF;
+        }
+        &.work-localgusto .showitem-img{
+          background: #F88B69;
+        }
+        &.work-mila .showitem-img{
+          background: #56AFEA;
+        }
+        .showitem-img{
+          img{
+            transition: transform 0.3s ease-in-out;
+          }
+          &:hover img, &:focus img{
+            transform: scale(1.1);
+          }
+        }
+      }
     }
   }
 }
