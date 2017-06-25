@@ -1,0 +1,12 @@
+# Ignore node_module
+node_modules
+.idea
+npm-debug.log
+.idea/*
+
+#CSS files
+assets/css/*
+
+#Miscellaneous
+.DS_Store
+assets/.DS_Store
